@@ -11,7 +11,7 @@ create alerts, and quick identify root causes of service issues.
 If you have any feedback or questions, please post them on the
 [Discuss forum](https://discuss.elastic.co/tags/c/apm/nodejs).
 
-[![npm](https://img.shields.io/npm/v/elastic-apm-node.svg)](https://www.npmjs.com/package/elastic-apm-node-meteor)
+[![npm](https://img.shields.io/npm/v/elastic-apm-node-meteor.svg)](https://www.npmjs.com/package/elastic-apm-node-meteor)
 
 ## Installation
 
