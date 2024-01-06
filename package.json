@@ -47,7 +47,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/elastic/apm-agent-nodejs.git"
+    "url": "https://github.com/mahyarkarimi/apm-agent-nodejs"
   },
   "engines": {
     "node": ">=14.17.0"
