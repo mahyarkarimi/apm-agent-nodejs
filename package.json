@@ -1,7 +1,7 @@
 {
-  "name": "elastic-apm-node",
+  "name": "elastic-apm-node-meteor",
   "version": "4.3.0",
-  "description": "The official Elastic APM agent for Node.js",
+  "description": "The Elastic APM agent for Metoer.js framework",
   "type": "commonjs",
   "main": "index.js",
   "types": "index.d.ts",
@@ -78,14 +78,15 @@
     "trace",
     "tracing",
     "distributedtracing",
-    "distributed-tracing"
+    "distributed-tracing",
+    "meteor"
   ],
-  "author": "Thomas Watson Steen <w@tson.dk> (https://twitter.com/wa7son)",
+  "author": "Mahyar Karimi",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/elastic/apm-agent-nodejs/issues"
+    "url": "https://github.com/mahyarkarimi/apm-agent-nodejs.git/issues"
   },
-  "homepage": "https://github.com/elastic/apm-agent-nodejs",
+  "homepage": "https://github.com/mahyarkarimi/apm-agent-nodejs.git",
   "dependencies": {
     "@elastic/ecs-pino-format": "^1.5.0",
     "@opentelemetry/api": "^1.4.1",
@@ -104,6 +105,7 @@
     "escape-string-regexp": "^4.0.0",
     "fast-safe-stringify": "^2.0.7",
     "fast-stream-to-buffer": "^1.0.0",
+    "fibers": "5.0.3",
     "http-headers": "^3.0.2",
     "import-in-the-middle": "1.7.2",
     "json-bigint": "^1.0.0",
