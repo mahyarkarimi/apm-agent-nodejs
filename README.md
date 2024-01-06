@@ -1,8 +1,8 @@
-# Elastic APM Node.js Agent
+# Elastic APM Node.js Agent For Meteor Framework
 
-This is the official Node.js [application performance monitoring](https://www.elastic.co/observability/application-performance-monitoring)
-(APM) agent for the Elastic Observability solution. It is a Node.js package
-that runs with your Node.js application to automatically capture errors, tracing
+This is the forked agent from official Node.js [application performance monitoring](https://www.elastic.co/observability/application-performance-monitoring)
+(APM) agent for the Elastic Observability solution with the ability to fully integrate with [Meteor.js](https://www.meteor.com/) framework. It is a Node.js package
+that runs with your Meteor.js application to automatically capture errors, tracing
 data, and performance metrics. APM data is sent to your Elastic Observability
 deployment -- hosted in [Elastic's cloud](https://www.elastic.co/cloud/) or in
 your own on-premises deployment -- where you can monitor your application,
@@ -11,14 +11,12 @@ create alerts, and quick identify root causes of service issues.
 If you have any feedback or questions, please post them on the
 [Discuss forum](https://discuss.elastic.co/tags/c/apm/nodejs).
 
-[![npm](https://img.shields.io/npm/v/elastic-apm-node.svg)](https://www.npmjs.com/package/elastic-apm-node)
-[![tests](https://github.com/github/docs/actions/workflows/test.yml/badge.svg)](https://github.com/elastic/apm-agent-nodejs/actions/workflows/test.yml)
-
+[![npm](https://img.shields.io/npm/v/elastic-apm-node.svg)](https://www.npmjs.com/package/elastic-apm-node-meteor)
 
 ## Installation
 
 ```
-npm install --save elastic-apm-node
+npm install --save elastic-apm-node-meteor
 ```
 
 ## Getting started
@@ -51,7 +49,7 @@ Typically, the quick start steps are:
 1. Install the APM agent package as a dependency:
 
     ```
-    npm install --save elastic-apm-node
+    npm install --save elastic-apm-node-meteor
     ```
 
 2. Configure and start the APM agent. For the APM agent's automatic
@@ -60,11 +58,13 @@ Typically, the quick start steps are:
    CommonJS, then put this at the *very top* of your main application file:
 
     ```js
-    require('elastic-apm-node').start({
+    require('elastic-apm-node-meteor').start({
         serverUrl: '<serverUrl from your Elastic Stack deployment>',
         secretToken: '<secretToken from your Elastic Stack deployment>'
         serviceName: '...', // https://www.elastic.co/guide/en/apm/agent/nodejs/current/configuration.html#service-name
         environment: '...', // https://www.elastic.co/guide/en/apm/agent/nodejs/current/configuration.html#environment
+        asyncContext: 'fibers',
+        usePathAsTransactionName: true
     });
     ```
 
@@ -93,28 +93,6 @@ Some important links:
 - [Metrics](https://www.elastic.co/guide/en/apm/agent/nodejs/current/metrics.html) describes the metrics that the APM agent automatically collects.
 - The APM agent includes an [OpenTelemetry Bridge](https://www.elastic.co/guide/en/apm/agent/nodejs/current/opentelemetry-bridge.html) that allows one to use the vendor-agnostic OpenTelemetry API for manual instrumentation in your application, should you require manual instrumentation.
 
-
-## Active release branches
-
-The following git branches are active:
-
-- The ["main" branch](https://github.com/elastic/apm-agent-nodejs/tree/main) is being used for **4.x releases**.
-- The ["3.x" branch](https://github.com/elastic/apm-agent-nodejs/tree/3.x) is being used for **3.x maintenance releases**. The 3.x line will be [supported until 2024-03-07](https://www.elastic.co/support/eol) -- for 6 months after the release of v4.0.0.
-
-## Contributing
-
-Contributions are very welcome. You can get in touch with us through our
-[Discuss forum](https://discuss.elastic.co/tags/c/apm/nodejs). If you have
-found an issue, you can open an issue at <https://github.com/elastic/apm-agent-nodejs/issues>.
-
-If you are considering contributing code to the APM agent, please read our
-[contribution guide](CONTRIBUTING.md).
-
-Please see [TESTING.md](TESTING.md) for instructions on how to run the test suite.
-
-
 ## License
 
 [BSD-2-Clause](LICENSE)
-
-<br>Made with ♥️ by Elastic and our community.
