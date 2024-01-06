@@ -1,6 +1,6 @@
 {
   "name": "elastic-apm-node-meteor",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "The Elastic APM agent for Metoer.js framework",
   "type": "commonjs",
   "main": "index.js",
